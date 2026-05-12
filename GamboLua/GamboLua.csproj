@@ -79,6 +79,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Class1.cs"/>
+        <Compile Include="GambitLib.cs" />
         <Compile Include="LuaFuncs.cs" />
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>

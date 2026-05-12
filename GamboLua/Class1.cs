@@ -41,36 +41,14 @@ namespace Gambo
             {
                 if (Input.GetKeyDown(KeyCode.O))
                 {
-                    
+
                     {
+                        GambitLib.testnewgambit();   
                         // Gambo_LuaFuncs.currentGambit = new GamboLuaGambit();
 
 
                         string testscript = File.ReadAllText(Path.Combine(Paths.PluginPath, "GamboLua", "test.lua"));
-                        
-//                         string testscript = @"
-//                             print('Lua executing Gambonanza.GiveGold(10)')
-//
-//                             local result = Gambonanza.GiveGold(10)
-//                             print('return code' .. result)
-//
-//                             print('testing board interact')
-//
-//                             local v = Gambonanza.GetBoardSize()
-//                             print('board width' .. v.x)
-//                             print('board height' .. v.y)
-//                             local t = Gambonanza.GetTile(0,0)
-//                             print('tile name' .. t.name)
-//
-//                             print('adding gold king to stock')
-//                             local still_has_space = Gambonanza.AddStockPiece(PieceType.KING,true)
-//
-//                             if still_has_space then
-//                                 print('success')
-//                             else
-//                                 print('stock full')
-//                             end
-//                         ";
+ 
 
                         // execute
                         GamboLuaManager.LuaScript?.DoString(testscript);
