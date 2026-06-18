@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamboLua", "GamboLua\GamboLua.csproj", "{3A019BA2-C1B4-49C1-B5FE-AC9CC5D52EE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamboTools", "GamboTools\GamboTools.csproj", "{3A019BA2-C1B4-49C1-B5FE-AC9CC5D52EE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
