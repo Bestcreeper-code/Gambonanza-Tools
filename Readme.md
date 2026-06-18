@@ -17,8 +17,8 @@
 
 ### 2. Install This Mod
 
-- Download the mod ZIP.
-- Extract it and move the mod folder into `BepInEx/plugins/`.
+- Download the mod .dll.
+- move the mod dll into `BepInEx/plugins/`.
 
 ### 3. Launch the Game
 
