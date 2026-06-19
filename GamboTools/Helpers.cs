@@ -152,12 +152,21 @@ namespace Gambo
                 {
                     case "Phantom":
                     {
+                        
+                        basePieceBehaviour.Modifier.ResetPhantom();
+                        basePieceBehaviour.Modifier.ResetStatus();
                         basePieceBehaviour.Modifier.TurnToPhantom();
+                        basePieceBehaviour.VisualEffect.TurnToPhantom();
+                        basePieceBehaviour.CurrentTile.TileVisual.PhantomEffect();
                         break;
                     }
                     case "Golden":
                     {
+                        basePieceBehaviour.Modifier.ResetGold();
+                        basePieceBehaviour.Modifier.ResetStatus();
                         basePieceBehaviour.Modifier.TurnToGold();
+                        basePieceBehaviour.VisualEffect.TurnToGold();
+                        basePieceBehaviour.CurrentTile.TileVisual.GoldEffect();
                         break;
                     }
                     case "Protected":
