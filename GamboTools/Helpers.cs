@@ -1,5 +1,7 @@
+using Blukulele.Audio;
 using Blukulele.CHE;
 using Blukulele.Core;
+using Blukulele.Module.Audio;
 using DG.Tweening;
 using UnityEngine;
 
@@ -99,6 +101,80 @@ namespace Gambo
 
             return 0;
         }
-        
+
+        public static int PlacePiece(int x, int y, bool iswhite, PieceType piece, string mod)
+        {
+            TileBehaviour[,] Board = SingletonMonoBehaviour<BoardManager>.Instance.Board;
+            
+            if (Board[y, x] == null || Board[y,x].PlaceToPutPieces == null)
+            {
+                return -1;
+            }
+            AudioManager.Play(AudioEvents.Apparition);
+            BasePieceBehaviour basePieceBehaviour = Object.Instantiate(SingletonMonoBehaviour<Library>.Instance.GetPiece(piece, iswhite? PieceColor.WHITE:PieceColor.BLACK), Board[y,x].PlaceToPutPieces.position, Quaternion.identity, Board[y, x].PlaceToPutPieces);
+            Board[y, x].Piece = basePieceBehaviour;
+            basePieceBehaviour.CurrentTile = Board[y, x];
+
+            if (!iswhite)
+            {
+                switch (mod)
+                {
+                    case "Elite":
+                    {
+                        basePieceBehaviour.EnemyAbilityModifier.Boss();
+                        break;
+                    }
+                    case "Polymorph":
+                    {
+                        basePieceBehaviour.EnemyAbilityModifier.Magician();
+                        break;
+                    }
+                    case "Crumbler":
+                    {
+                        basePieceBehaviour.EnemyAbilityModifier.Crumbler();
+                        break;
+                    }
+                    case "Invoker":
+                    {
+                        basePieceBehaviour.EnemyAbilityModifier.Invoker();
+                        break;
+                    }
+                    case "Stasis":
+                    {
+                        basePieceBehaviour.EnemyAbilityModifier.ClockBossPower();
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                switch (mod)
+                {
+                    case "Phantom":
+                    {
+                        basePieceBehaviour.Modifier.TurnToPhantom();
+                        break;
+                    }
+                    case "Golden":
+                    {
+                        basePieceBehaviour.Modifier.TurnToGold();
+                        break;
+                    }
+                    case "Protected":
+                    {
+                        basePieceBehaviour.Modifier.Protect();
+                        break;
+                    }
+                    case "Blessed":
+                    {
+                        basePieceBehaviour.Modifier.Benediction();
+                        break;
+                    }
+                }
+            }
+            
+            
+            return 0;
+        }
     }
 }

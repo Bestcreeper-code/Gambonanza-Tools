@@ -3,6 +3,7 @@ using System.IO;
 using BepInEx;
 using BepInEx.Logging;
 using Blukulele.CHE;
+using Blukulele.Core;
 using HarmonyLib;
 using UnityEngine;
 
@@ -46,8 +47,14 @@ namespace Gambo
                 UI.Init();
                 imgui_inited = true;
                 UI.show_window = true;
+                
             }
-            
+
+
+            if (Input.GetKeyDown(KeyCode.F10))
+            {
+                UI.show_window = !UI.show_window;
+            }
         }
     }
 

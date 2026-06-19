@@ -24,3 +24,10 @@
 
 - BepInEx will automatically load the mod on startup.
 - If the BepInEx console shows errors (red text), double-check your installation.
+
+
+
+
+
+
+# Use F10 to Hide/Show the Ui 

@@ -72,6 +72,9 @@
         <Reference Include="UnityEngine">
           <HintPath>..\..\..\.local\share\Steam\steamapps\common\Gambonanza Demo\GambonanzaDemo\GambonanzaDemo_Data\Managed\UnityEngine.dll</HintPath>
         </Reference>
+        <Reference Include="UnityEngine.AudioModule">
+          <HintPath>..\..\..\steamgames-common\Gambonanza\Gambonanza\Gambonanza_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine.CoreModule">
           <HintPath>..\..\..\.local\share\Steam\steamapps\common\Gambonanza Demo\GambonanzaDemo\GambonanzaDemo_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
