@@ -17,8 +17,11 @@ namespace Gambo
         public static ManualLogSource _logger;
         public static PluginMain Instance { get; private set; }
         public static string PluginDIr { get; private set; }
+
+        private static KeyCode ui_toggle_input = KeyCode.None;
         
         public readonly Harmony _harmony = new Harmony("com.bestcreeper.gambotools");
+        
 
         public void Awake()
         {
@@ -30,6 +33,31 @@ namespace Gambo
             
             PluginDIr = Path.GetDirectoryName(Info.Location);
 
+            var lines = File.ReadAllLines(Path.Combine(PluginDIr, "config.cfg"));
+
+            foreach (var line in lines)
+            {
+                if (line.StartsWith("Debug_Key:"))
+                {
+
+                    var value = line.Replace("Debug_Key:", "").Trim();
+
+                    
+                    
+
+                    if (!Enum.TryParse<KeyCode>(value, true, out ui_toggle_input))
+                    {
+                        Logger.LogWarning($"Failed to parse key: [{value}]");
+                        ui_toggle_input = KeyCode.None;
+                    }
+                    
+                }
+            }
+            if (ui_toggle_input == KeyCode.None)
+            {
+                ui_toggle_input = KeyCode.F10;
+            }
+            
             _logger = Logger;
             
             
@@ -51,7 +79,7 @@ namespace Gambo
             }
 
 
-            if (Input.GetKeyDown(KeyCode.F10))
+            if (Input.GetKeyDown(ui_toggle_input))
             {
                 UI.show_window = !UI.show_window;
             }

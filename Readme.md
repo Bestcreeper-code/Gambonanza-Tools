@@ -30,4 +30,4 @@
 
 
 
-# Use F10 to Hide/Show the Ui 
+# Use you can configure the keybind to Hide/Show the Ui in config.cfg ("Debug_Key:" then a single key name in UPPERCASE for example "F11" or "P")
