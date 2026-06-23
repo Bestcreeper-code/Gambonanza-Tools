@@ -47,6 +47,11 @@ namespace Gambo
             
             switch (type)
             {
+                case "Unmodified":
+                {
+                    SingletonMonoBehaviour<BoardManager>.Instance.Board[y, x].TurnToDefault();
+                    break;
+                }
                 case "Trap":
                 {
                     SingletonMonoBehaviour<BoardManager>.Instance.Board[y, x].TurnToHunter(true);

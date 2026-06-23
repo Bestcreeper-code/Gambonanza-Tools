@@ -180,6 +180,7 @@ namespace Gambo
 
         private static string[] tile_commands = new[]
         {
+            "Unmodified",
             "Trap",
             "Phantom",
             "Golden",
@@ -193,6 +194,7 @@ namespace Gambo
         };
         private static string[] w_piece_commands = new[]
         {
+            "No Modifier",
             "Phantom",
             "Golden",
             "Protected",
@@ -200,6 +202,7 @@ namespace Gambo
         };
         private static string[] b_piece_commands = new[]
         {
+            "No Modifier",
             "Elite",
             "Polymorph",
             "Crumbler",
